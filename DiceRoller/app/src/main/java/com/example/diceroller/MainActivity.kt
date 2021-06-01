@@ -8,8 +8,10 @@ import android.widget.TextView
 import android.widget.Toast
 import java.util.*
 
-
 class MainActivity : AppCompatActivity() {
+
+    lateinit var diceImage: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -18,8 +20,8 @@ class MainActivity : AppCompatActivity() {
         rollButton.setOnClickListener{
             Toast.makeText(this,"Button Clicked!",Toast.LENGTH_SHORT).show()
             rollDice()
-
         }
+        diceImage = findViewById(R.id.dice_image)
     }
 
     private fun rollDice() {
@@ -32,10 +34,12 @@ class MainActivity : AppCompatActivity() {
             5 -> R.drawable.dice_5
             else -> R.drawable.dice_6
         }
-        val diceImage: ImageView = findViewById(R.id.dice_image)
+        //val diceImage: ImageView = findViewById(R.id.dice_image)
+        /**
+         * If we use val diceImage (STRING 37 ) we will use mor RAM
+         * in our Devices , because we use (modifier/модификатор) lateinit var
+         * https://kotlinlang.org/docs/properties.html#checking-whether-a-lateinit-var-is-initialized
+         */
         diceImage.setImageResource(drawableResource)
-
-        // resultText.text =randomInt.toString()
-        //resultText.text ="Dice Rolled!"
     }
 }
