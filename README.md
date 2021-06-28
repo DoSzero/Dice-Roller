@@ -4,5 +4,5 @@ When we think of a die, a small cubic object comes to mind which, when dropped o
  
  
 Udacity temple app for first lessons 
-- Learn to use Kotlin construction lateinit 
+- Use Kotlin construction lateinit 
 - Use simple animations 
